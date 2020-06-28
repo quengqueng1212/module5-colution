@@ -106,8 +106,7 @@ function buildAndShowHomeHTML (categories) {
 
       // TODO: STEP 2: Here, call chooseRandomCategory, passing it retrieved 'categories'
       // Pay attention to what type of data that function returns vs what the chosenCategoryShortName
-      // variable's name implies it expects.
-      // var chosenCategoryShortName = ....
+      // variable's name implies it expects.      
       var chosenCategoryShortName = chooseRandomCategory(categories);
       console.log("Value of chosenCategoryShortName is: " + JSON.stringify(chosenCategoryShortName));
       console.log("Value of chosenCategoryShortName is: " + chosenCategoryShortName.short_name);
@@ -122,10 +121,15 @@ function buildAndShowHomeHTML (categories) {
       // $dc.loadMenuItems('L')
       // Hint: you need to surround the chosen category short name with something before inserting
       // it into the home html snippet.
-      //
-      // var homeHtmlToInsertIntoMainPage = ....
+      //      
+      console.log("homeHtml BEFORE: " + homeHtml);
+      homeHtml = string.replace({{randomCategoryShortName}}, "'" + chosenCategoryShortName.short_name + "'");
+      console.log("homeHtml AFTER: " + homeHtml);
+
+
       console.log("Calling insertProperty...");          
       var homeHtmlToInsertIntoMainPage = insertProperty(homeHtml, "short_name", "'" + chosenCategoryShortName.short_name + "'");
+      
       console.log("homeHtmlToInsertIntoMainPage: " + homeHtmlToInsertIntoMainPage);            
 
       // TODO: STEP 4: Insert the the produced HTML in STEP 3 into the main page
