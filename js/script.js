@@ -39,13 +39,15 @@ var showLoading = function (selector) {
 // Return substitute of '{{propName}}'
 // with propValue in given 'string'
 var insertProperty = function (string, propName, propValue) {  
+    console.log("string: " + string);
+  console.log("propName: " + propName);
+  console.log("propValue: " + propValue);
+  
   var propToReplace = "{{" + propName + "}}";
   string = string
     .replace(new RegExp(propToReplace, "g"), propValue);
 
-  console.log("string: " + string);
-  console.log("propName: " + propName);
-  console.log("propValue: " + propValue);
+
   return string;
 };
 
@@ -122,7 +124,7 @@ function buildAndShowHomeHTML (categories) {
       //
       // var homeHtmlToInsertIntoMainPage = ....
       console.log("Calling insertProperty...");            
-      // var homeHtmlToInsertIntoMainPage = insertProperty(homeHtmlToInsertIntoMainPage, "chosenCategoryShortName", "'" + chosenCategoryShortName + "'");
+      var homeHtmlToInsertIntoMainPage = insertProperty(homeHtmlToInsertIntoMainPage, "chosenCategoryShortName", "'" + chosenCategoryShortName + "'");
       // console.log("Calling insertProperty end...");            
 
       // TODO: STEP 4: Insert the the produced HTML in STEP 3 into the main page
