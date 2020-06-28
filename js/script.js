@@ -123,7 +123,7 @@ function buildAndShowHomeHTML (categories) {
       // it into the home html snippet.
       //      
       console.log("homeHtml BEFORE: " + homeHtml);
-      homeHtml = string.replace({{randomCategoryShortName}}, "'" + chosenCategoryShortName.short_name + "'");
+      homeHtml = string.replace("{{randomCategoryShortName}}", "'" + chosenCategoryShortName.short_name + "'");
       console.log("homeHtml AFTER: " + homeHtml);
 
 
