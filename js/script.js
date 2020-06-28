@@ -121,11 +121,10 @@ function buildAndShowHomeHTML (categories) {
       // $dc.loadMenuItems('L')
       // Hint: you need to surround the chosen category short name with something before inserting
       // it into the home html snippet.
-      //      
-      console.log("homeHtml BEFORE: " + homeHtml);
-      homeHtml = string.replace("{{randomCategoryShortName}}", "'" + chosenCategoryShortName.short_name + "'");
-      console.log("homeHtml AFTER: " + homeHtml);
+      //            
 
+      homeHtml = insertProperty(homeHtml, "randomCategoryShortName", "'" + chosenCategoryShortName.short_name + "'");
+      console.log("homeHtml : " + homeHtml);
 
       console.log("Calling insertProperty...");          
       var homeHtmlToInsertIntoMainPage = insertProperty(homeHtml, "short_name", "'" + chosenCategoryShortName.short_name + "'");
