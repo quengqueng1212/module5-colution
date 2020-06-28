@@ -42,7 +42,7 @@ var insertProperty = function (string, propName, propValue) {
     console.log("string: " + string);
   console.log("propName: " + propName);
   console.log("propValue: " + propValue);
-  
+
   var propToReplace = "{{" + propName + "}}";
   string = string
     .replace(new RegExp(propToReplace, "g"), propValue);
@@ -123,7 +123,10 @@ function buildAndShowHomeHTML (categories) {
       // it into the home html snippet.
       //
       // var homeHtmlToInsertIntoMainPage = ....
-      console.log("Calling insertProperty...");            
+      console.log("Calling insertProperty...");    
+      console.log(homeHtmlToInsertIntoMainPage);
+      console.log("chosenCategoryShortName");
+      console.log("'" + chosenCategoryShortName + "'");
       var homeHtmlToInsertIntoMainPage = insertProperty(homeHtmlToInsertIntoMainPage, "chosenCategoryShortName", "'" + chosenCategoryShortName + "'");
       // console.log("Calling insertProperty end...");            
 
